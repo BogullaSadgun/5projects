@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Culinary Assistant & Pantry Search</title>
+  <link rel="stylesheet" href="recipie.css">
+</head>
+<body>
+
+  <!-- Heading number one -->
+  <header class="main-header">
+    <h1>Culinary Assistant & Pantry Search</h1>
+  </header>
+
+  <main class="app-container">
+
+		<!-- seciton number one-->
+    <section class="pantry-section">
+      <h2 class="section-title">Pantry Ingredient Search</h2>
+      <p class="sub-heading">Available ingredients (comma-separated):</p>
+
+      <div class="search-controls-row">
+        <input 
+          type="text" 
+          id="ingredientInput" 
+          placeholder="e.g., egg, rice, soy sauce" 
+          class="pantry-input"
+        >
+        <button id="findRecipesBtn" class="btn btn-primary">Find Recipes</button>
+        <button id="clearPantryBtn" class="btn btn-secondary">Clear</button>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <div class="recipes-container">
+        <h2 class="roster-title">
+          Matching Recipes (<span id="recipeCount" class="recipe-count">0</span>)
+        </h2>
+        <div id="recipeList" class="recipe-list">
+          <!-- Dynamic recipe cards are inserted here -->
+        </div>
+      </div>
+
+      <div class="meal-plan-container">
+
+        <div class="card card-3d">
+          <div class="card-header">Day Meal Plan</div>
+          <div class="card-body">
+            <div id="mealPlanList" class="empty-plan-box">
+              <p>No recipes added to plan yet</p>
+            </div>
+            <hr class="card-divider">
+            <h3 class="nutrition-title">Daily Nutrition Totals</h3>
+            <div class="stat-row">
+              <span class="stat-label">Total Calories</span>
+              <span id="totalCalories" class="stat-value">0 Kcal</span>
+            </div>
+
+            <div class="stat-row">
+              <span class="stat-label">Total Prep Time</span>
+              <span id="totalPrepTime" class="stat-value">0 mins</span>
+            </div>
+
+            <button id="clearMealPlanBtn" class="btn btn-clear-plan">Clear Meal Plan</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="recipie.js"></script>
+</body>
+</html>

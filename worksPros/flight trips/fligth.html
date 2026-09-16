@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AeroFlight Search & Seat Booking Dashboard</title>
+  <link rel="stylesheet" href="flight.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1>AeroFlight Search & Seat Booking Dashboard</h1>
+  </header>
+
+  <main class="app-container">
+    <section class="search-section">
+      <h2 class="search-title">Search Available Flights</h2>
+      
+      <div class="search-row-1">
+        <div class="input-group">
+          <label for="originSelect">Origin Airport</label>
+          <select id="originSelect" class="form-control">
+            <option value="All">All Origins</option>
+            <option value="JFK">JFK</option>
+            <option value="ORD">ORD</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="destSelect">Destination Airport</label>
+          <select id="destSelect" class="form-control">
+            <option value="All">All Destinations</option>
+            <option value="LAX">LAX</option>
+            <option value="SFO">SFO</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="maxPriceInput">Max Price ($)</label>
+          <input type="number" id="maxPriceInput" placeholder="e.g., 300" class="form-control">
+        </div>
+      </div>
+      <div class="search-row-2">
+        <p class="sub-heading">Filter by seat classes (matches any selected):</p>
+        
+        <div class="checkbox-group-horizontal">
+          <label class="checkbox-item">
+            <input type="checkbox" value="Economy" class="seat-class-checkbox"> Economy
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" value="Premium Economy" class="seat-class-checkbox"> Premium Economy
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" value="Business" class="seat-class-checkbox"> Business
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" value="First Class" class="seat-class-checkbox"> First Class
+          </label>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="searchBtn" class="btn btn-facebook">Search Flights</button>
+        <button id="resetBtn" class="btn btn-grey">Reset Filters</button>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <div class="flights-container">
+        <h2 class="section-heading-dark">
+          Available Flights (<span id="flightCount">0</span>)
+        </h2>
+
+        <div id="flightErrorMsg" class="error-msg-box"></div>
+        <div id="flightList" class="flight-list">
+          <!-- fligts are appeard here  -->
+        </div>
+      </div>
+      <div class="itinerary-container">
+        <h2 class="itinerary-title">Your Selected Itinerary</h2>
+        <div id="itineraryList" class="empty-itinerary-box">
+          <p>No flights added to itinerary</p>
+        </div>
+
+        <hr class="section-divider">
+        <h3 class="cost-breakdown-title">Cost Breakdown</h3>
+        <div class="cost-row">
+          <span class="cost-label">Subtotal:</span>
+          <span id="subtotalCost" class="cost-value">$0</span>
+        </div>
+
+        <div class="cost-row">
+          <span class="cost-label">Taxes & Fees (10%):</span>
+          <span id="taxCost" class="cost-value">$0</span>
+        </div>
+
+        <div class="cost-row">
+          <span class="cost-label">Grand Total:</span>
+          <span id="grandTotalCost" class="cost-value">$0</span>
+        </div>
+
+        <button id="clearItineraryBtn" class="btn btn-laser-orange">Clear Itinerary</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- jump scare -->
+  <div id="jumpScare" class="jump-scare">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8R3iFmkeiUz2K4frhDlVbTXVB83BDExx6YsFVPNGyfw&s=10" alt="Jumpscare">
+    <audio id="screamSound" src="freesound_community-jumpscare-68730.mp3"></audio>
+  </div>
+	<script src="flight.js"></script>
+</body>
+</html>

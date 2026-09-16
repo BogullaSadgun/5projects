@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Product Filter & Cart Analytics</title>
+  <link rel="stylesheet" href="stud.css">
+</head>
+<body>
+  <header>
+    <h1>S3 Dotcom Product Catalog</h1>
+  </header>
+
+  <main class="container">
+    <!-- Controls & Filters Section -->
+    <section class="controls-card">
+      <h2>Search & Filter Products</h2>
+      <form id="filter-form">
+        <div class="form-group">
+          <label for="search-input">Search Product Name:</label>
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Type to search (e.g., Mouse)..."
+          >
+          <span class="error-msg" id="search-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="tag-select">Filter by Tag:</label>
+          <select id="tag-select">
+            <option value="ALL">All Tags</option>
+            <option value="office">Office</option>
+            <option value="tech">Tech</option>
+            <option value="USB">USB</option>
+            <option value="gaming">Gaming</option>
+            <option value="RGB">RGB</option>
+            <option value="Comfort">Comfort</option>
+            <option value="Health">Health</option>
+            <option value="Cables">Cables</option>
+          </select>
+        </div>
+
+        <button type="button" id="reset-btn" class="btn btn-secondary">Reset Filters</button>
+      </form>
+    </section>
+
+    <!-- Layout Split: Products Grid & Cart Analytics -->
+    <div class="shop-layout">
+      <!-- Product Catalog Grid -->
+      <section class="product-section">
+        <h2>Products (<span id="product-count">0</span>)</h2>
+        <div id="product-grid" class="product-grid">
+          <!-- Product Cards rendered dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- Cart Analytics Sidebar -->
+      <aside class="cart-section">
+        <h2>Shopping Cart</h2>
+        <div id="cart-list" class="cart-list">
+          <p class="empty-cart-msg">Your cart is empty.</p>
+        </div>
+
+        <hr>
+
+        <!-- Cart Analytics (Calculated using reduce) -->
+        <div class="cart-analytics">
+          <h3>Cart Summary</h3>
+          <p><strong>Total Items:</strong> <span id="cart-total-items">0</span></p>
+          <p><strong>Grand Total:</strong> $<span id="cart-grand-total">0.00</span></p>
+
+          <h4>Category Breakdown:</h4>
+          <ul id="category-breakdown">
+            <li>No items added.</li>
+          </ul>
+          <button id="checkout-btn" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+            Checkout
+          </button>
+          <span class="error-msg" id="cart-error"></span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="stud.js"></script>
+</body>
+</html>

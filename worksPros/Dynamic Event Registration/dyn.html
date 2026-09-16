@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S3 Dotocm 2026 Portal</title>
+  <link rel="stylesheet" href="dyn.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <h1>S3 Dotocm 2026 Portal</h1>
+  </header>
+
+  <div class="portal-container">
+
+    <section class="form-section">
+      <h2 class="section-title">Register Attendee</h2>
+
+      <form id="registrationForm" class="register-form">
+
+        <div class="form-group">
+          <label for="fullName">Full Name*</label>
+          <input type="text" id="fullName" placeholder="Enter full name" required>
+          <div id="nameError" class="field-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address*</label>
+          <input type="email" id="email" placeholder="name@example.com" required>
+          <div id="emailError" class="field-error"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="role">Primary Role*</label>
+          <select id="role" required>
+            <option value="" disabled selected>Select a role...</option>
+            <option value="attendee">Attendee</option>
+            <option value="speaker">Speaker</option>
+          </select>
+        </div>
+
+        <div class="form-group session-group">
+          <label class="session-title">
+            Select Session (at least one)*
+          </label>
+
+          <div class="session-options">
+
+            <label class="session-option">
+              <input type="checkbox" name="sessions" value="AI Ethics">
+              <span>AI Ethics</span>
+            </label>
+
+            <label class="session-option">
+              <input type="checkbox" name="sessions" value="Robotics">
+              <span>Robotics</span>
+            </label>
+
+            <label class="session-option">
+              <input type="checkbox" name="sessions" value="Web3">
+              <span>Web3</span>
+            </label>
+
+            <label class="session-option">
+              <input type="checkbox" name="sessions" value="Cloud Native">
+              <span>Cloud Native</span>
+            </label>
+
+            <label class="session-option">
+              <input type="checkbox" name="sessions" value="DevOps">
+              <span>DevOps</span>
+            </label>
+
+          </div>
+
+          <div id="sessionError" class="field-error"></div>
+        </div>
+
+        <div id="formError" class="field-error"></div>
+
+        <button type="submit" class="submit-btn">
+          Complete Registration
+        </button>
+
+      </form>
+    </section>
+
+    <section class="preview-section">
+
+      <div class="card card-3d">
+        <div class="card-header">Latest Conference Badge</div>
+
+        <div class="card-body">
+          <div id="badgePreview" class="empty-preview">
+            Register a user to generate a live badge preview
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-3d">
+        <div class="card-header">Session Registration Summary</div>
+
+        <div class="card-body">
+          <div id="sessionSummary" class="empty-summary"></div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <script src="dyn.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S3 Dotocm 2026 Portal</title>
+  <link rel="stylesheet" href="salary.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1>S3 Dotocm 2026 Portal</h1>
+  </header>
+  <section class="filters-section">
+    <h2 class="filter-main-title">Employees Filters</h2>
+		<div class="filter-controls-row">
+			<div class="filter-group">
+				<label for="deptSelect">Department</label>
+				<select id="deptSelect">
+					<option value="All">All Departments</option>
+					<option value="Engineering">Engineering</option>
+					<option value="Design">Design</option>
+					<option value="Marketing">Marketing</option>
+				</select>
+			</div>
+
+      <div class="filter-group">
+        <label for="minSalary">Min Salary</label>
+        <input type="number" id="minSalary" placeholder="e.g. 30000">
+      </div>
+
+      <div class="filter-group">
+        <label for="maxSalary">Max Salary</label>
+        <input type="number" id="maxSalary" placeholder="e.g. 100000">
+      </div>
+    </div>
+
+		<div id="salaryErroe" class="filed-error"></div>
+
+    <h3 class="filter-sub-title">Filter by skills (matches any selected):</h3>
+    <div id="skillsContainer" class="skills-container">
+      <!-- Skill tags/checkboxes can be rendered here dynamically -->
+    </div>
+
+    <div class="filter-buttons">
+      <button id="applyBtn" class="btn btn-blue">Apply Filters</button>
+      <button id="resetBtn" class="btn btn-grey">Reset</button>
+    </div>
+  </section>
+  <hr class="section-divider">
+  <section class="portal-container">
+
+    <div class="roster-container">
+      <h2 class="roster-title">
+        Employees Roster (<span id="rosterCount" class="roster-count">0</span>)
+      </h2>
+      <div id="rosterList" class="roster-content">
+      </div>
+    </div>
+
+    <div class="payroll-container">
+
+      <div class="card card-3d">
+        <div class="card-header">Payroll Summary</div>
+        <div class="card-body">
+          <p class="stat-label">Total Salary</p>
+          <p id="totalSalary" class="stat-value">$0</p>
+          <p class="stat-label">Average Salary</p>
+          <p id="avgSalary" class="stat-value">$0</p>
+        </div>
+      </div>
+      <div class="card card-3d">
+        <div class="card-header">Payroll Summary</div>
+        <div class="card-body">
+          <div id="payrollSecondaryContent" class="empty-preview">
+            Select filters to update live stats...
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+	<script src="salary.js"></script>
+</body>
+</html>
