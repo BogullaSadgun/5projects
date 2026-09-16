@@ -91,7 +91,7 @@ let tax = subtotal * 0.10;
 let grandTotal = subtotal + tax;
 
 //! jump scare start------------------
-if (grandTotal >= 10000) {
+if (grandTotal >= 1000) {
   jumpScare.style.display = "block";
   screamSound.currentTime = 0;
   screamSound.play();
